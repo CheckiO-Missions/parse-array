@@ -34,14 +34,24 @@ from checkio.referees import checkers
 
 from tests import TESTS
 
+cover = """def cover(in_data, func):
+    try:
+        ans = func(in_data)
+        if ans == 'raisedValueError':
+            return 'raisedValueError '
+    except ValueError:
+        return 'raisedValueError'
+"""
+
 api.add_listener(
     ON_CONNECT,
     CheckiOReferee(
         tests=TESTS,
         cover_code={
-            'python-27': cover_codes.unwrap_args,  # or None
-            'python-3': cover_codes.unwrap_args
+            'python-27': cover,  # or None
+            'python-3': cover
         },
+        function_name="parse_array",
         # checker=None,  # checkers.float.comparison(2)
         # add_allowed_modules=[],
         add_close_builtins=["eval", "import", "__import__"],

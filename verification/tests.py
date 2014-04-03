@@ -8,29 +8,64 @@ Each test is dict with
 """
 
 
+
+
+
 TESTS = {
     "Basics": [
         {
-            "input": [3, 2],
-            "answer": 5,
-            "explanation": "3+2=?"
+            "input": "[1, 2, 3]",
+            "answer": [1, 2, 3],
         },
         {
-            "input": [5, 7],
-            "answer": 12,
-            "explanation": "5+7=?"
-        }
+            "input": "[[1], 2, 3]",
+            "answer": [[1], 2, 3],
+        },
+        {
+            "input": "[-3, [-2, 0], 10]",
+            "answer": [-3, [-2, 0], 10],
+        },
+        {
+            "input": "[100]",
+            "answer": [100],
+        },
+        {
+            "input": "[2,     3]",
+            "answer": [2, 3],
+        },
+        {
+            "input": "[[10, [11]], [[[1], 2], 3], 5]",
+            "answer": [[10, [11]], [[[1], 2], 3], 5],
+        },
+        {
+            "input": "   [3, 4]   ",
+            "answer": [3, 4],
+        },
     ],
     "Extra": [
         {
-            "input": [6, 3],
-            "answer": 9,
-            "explanation": "6+3=?"
+            "input": "[asd]",
+            "answer": "raisedValueError",
         },
         {
-            "input": [6, 7],
-            "answer": 13,
-            "explanation": "6+7=?"
-        }
+            "input": "[2, 3]]",
+            "answer": "raisedValueError",
+        },
+        {
+            "input": "[++2, 1]",
+            "answer": "raisedValueError",
+        },
+        {
+            "input": "[10, 11, , 12]",
+            "answer": "raisedValueError",
+        },
+        {
+            "input": " 13 ",
+            "answer": "raisedValueError",
+        },
+        {
+            "input": "[[2]",
+            "answer": "raisedValueError",
+        },
     ]
 }
