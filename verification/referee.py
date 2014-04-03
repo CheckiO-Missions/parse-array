@@ -44,6 +44,6 @@ api.add_listener(
         },
         # checker=None,  # checkers.float.comparison(2)
         # add_allowed_modules=[],
-        # add_close_builtins=[],
+        add_close_builtins=["eval", "import", "__import__"],
         # remove_allowed_modules=[]
     ).on_ready)
