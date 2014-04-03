@@ -6,7 +6,7 @@
     You are given a string that contains a list with integers or with another nested lists.
     The integers could have plus or minus sign before but only one.
     If input string does not contain an array, then return None.
-    For the wrong format string -- raise ValueError.
+    For the wrong format string -- raise <strong>ValueError</strong>.
     Elements of the arrays are separated by commas.
 </p>
 
@@ -33,5 +33,12 @@ parse_array("[-3, [-2, 0], 10]") == [-3, [-2, 0], 10]
 
 <p class="for_info_only">
     <strong>How it is used: </strong>
-    <i>(Here you can explain how it can be used in development and what is usage of this.)</i>
+    This task can be the part of the more complex parser.
+    And you can learn how to read code.
 </p>
+
+<p>
+    <strong>Precondition: </strong>
+    depth < 5<br>
+    &forall; x ∈ data : -1000 < x < 1000<br>
+    </p>

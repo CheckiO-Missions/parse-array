@@ -41,6 +41,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
 
             var checkioInput = data.in;
 
+
             if (data.error) {
                 $content.find('.call').html('Fail: checkio(' + JSON.stringify(checkioInput) + ')');
                 $content.find('.output').html(data.error.replace(/\n/g, ","));
@@ -58,15 +59,29 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
             var result = data.ext["result"];
             var result_addon = data.ext["result_addon"];
 
+            if (rightResult === 'raisedValueError') {
+                var strRightResult = 'ValueError'
+            }
+            else {
+                strRightResult = JSON.stringify(rightResult);
+            }
+
+
+            if (userResult === 'raisedValueError') {
+                var strUserResult = 'ValueError'
+            }
+            else {
+                strUserResult = JSON.stringify(userResult);
+            }
 
             //if you need additional info from tests (if exists)
             var explanation = data.ext["explanation"];
 
-            $content.find('.output').html('&nbsp;Your result:&nbsp;' + JSON.stringify(userResult));
+            $content.find('.output').html('&nbsp;Your result:&nbsp;' + strUserResult);
 
             if (!result) {
                 $content.find('.call').html('Fail: checkio(' + JSON.stringify(checkioInput) + ')');
-                $content.find('.answer').html('Right result:&nbsp;' + JSON.stringify(rightResult));
+                $content.find('.answer').html('Right result:&nbsp;' + strRightResult);
                 $content.find('.answer').addClass('error');
                 $content.find('.output').addClass('error');
                 $content.find('.call').addClass('error');

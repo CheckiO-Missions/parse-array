@@ -34,11 +34,13 @@ from checkio.referees import checkers
 
 from tests import TESTS
 
-cover = """def cover(in_data, func):
+cover = """def cover(func, in_data):
     try:
         ans = func(in_data)
         if ans == 'raisedValueError':
             return 'raisedValueError '
+        else:
+            return ans
     except ValueError:
         return 'raisedValueError'
 """
