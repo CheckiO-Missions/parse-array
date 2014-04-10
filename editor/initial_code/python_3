@@ -22,7 +22,7 @@ def parse_array(s, _w=WHITESPACE_STR, _sep=","):
             if accumulator:
                 stack[-1](int(accumulator))
                 accumulator = ""
-                flag = True
+            flag = True
             stack.pop()
         elif ch in _sep:
             if accumulator:
@@ -49,6 +49,8 @@ if __name__ == "__main__":
     assert parse_array("[2,     3]") == [2, 3], "Whitespaces"
     assert parse_array("[[10, [11]], [[[1], 2], 3], 5]") == [[10, [11]], [[[1], 2], 3], 5], "Deep nested"
     assert parse_array("   [3, 4]   ") == [3, 4], "Skip whitespaces"
+    assert parse_array("[[], 0]") == [[], 0], "Empty arrays"
+    assert parse_array("[[0,], 0]") == [[0], 0], "Comma - closed bracket"
 
     try:
         parse_array("[asd]")
