@@ -88,3 +88,26 @@ if __name__ == "__main__":
     except ValueError:
         pass
 
+    try:
+        parse_array("[3 4]")
+        assert False, "Check for spurious spaces within a number"
+    except ValueError:
+        pass
+
+    try:
+        parse_array("[10, 11,, 12]")
+        assert False, "Check for double separators without a space in between"
+    except ValueError:
+        pass
+
+    try:
+        parse_array("[[]3]")
+        assert False, "Check for missing separators after []"
+    except ValueError:
+        pass
+
+    try:
+        parse_array("[2[]]")
+        assert False, " Check for missing separators before []"
+    except ValueError:
+        pass

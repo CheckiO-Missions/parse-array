@@ -73,8 +73,6 @@ TESTS = {
             "input": "[[2]",
             "answer": "raisedValueError",
         },
-    ],
-    "Extra": [
         {
             "input": "[3 4]",
             "answer": "raisedValueError",
@@ -94,6 +92,9 @@ TESTS = {
             "input": "[2[]]",
             "answer": "raisedValueError",
         },
+    ],
+    "Extra": [
+
         {
             "input": "[999, 0, -999, []]",
             "answer": [999, 0, -999, []]
