@@ -22,7 +22,7 @@ def parse_array(s, _w=WHITESPACE_STR, _sep=","):
             if accumulator:
                 stack[-1](int(accumulator))
                 accumulator = ""
-            flag = True
+                flag = True
             stack.pop()
         elif ch in _sep:
             if accumulator:
