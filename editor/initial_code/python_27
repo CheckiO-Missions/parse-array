@@ -129,3 +129,15 @@ if __name__ == "__main__":
         assert False, " Check for missing separators before []"
     except ValueError:
         pass
+    
+    try:
+        parse_array("[3],")
+        assert False, "Excess separator"
+    except ValueError:
+        pass
+    
+    try:
+        parse_array("[1,2]3")
+        assert False, "Excess number"
+    except ValueError:
+        pass

@@ -92,6 +92,14 @@ TESTS = {
             "input": "[2[]]",
             "answer": "raisedValueError",
         },
+        {
+            "input": "[3],",
+            "answer": "raisedValueError",
+        },
+        {
+            "input": "[1,2]3",
+            "answer": "raisedValueError",
+        }
     ],
     "Extra": [
 
