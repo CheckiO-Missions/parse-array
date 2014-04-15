@@ -14,6 +14,8 @@ def parse_array(s, _w=WHITESPACE_STR, _sep=","):
             whitespace_flag = True
             continue
         if ch == "[":
+            if started_flag and not stack:
+                raise ValueError("Wrong string.")
             if closed_flag or accumulator:
                 raise ValueError
             in_array = []
@@ -129,15 +131,21 @@ if __name__ == "__main__":
         assert False, " Check for missing separators before []"
     except ValueError:
         pass
-    
+
     try:
         parse_array("[3],")
         assert False, "Excess separator"
     except ValueError:
         pass
-    
+
     try:
         parse_array("[1,2]3")
         assert False, "Excess number"
+    except ValueError:
+        pass
+
+    try:
+        parse_array("[1], [2,3]")
+        assert False, "Here should be only one array."
     except ValueError:
         pass

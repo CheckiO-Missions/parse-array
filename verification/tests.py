@@ -99,7 +99,12 @@ TESTS = {
         {
             "input": "[1,2]3",
             "answer": "raisedValueError",
-        }
+        },
+        {
+            "input": "[1], [2,3]",
+            "answer": "raisedValueError",
+        },
+
     ],
     "Extra": [
 
