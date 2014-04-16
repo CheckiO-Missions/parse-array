@@ -56,6 +56,6 @@ api.add_listener(
         function_name="parse_array",
         # checker=None,  # checkers.float.comparison(2)
         # add_allowed_modules=[],
-        add_close_builtins=["eval", "import", "__import__"],
+        add_close_builtins=["eval", "import", "__import__", "exec"],
         # remove_allowed_modules=[]
     ).on_ready)
