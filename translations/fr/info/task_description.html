@@ -1,0 +1,46 @@
+<p>
+    Pour cette mission, vous disposez déjà de la solution.
+    Le seul problème, c'est la présence d'un bug. Il vous faut le trouver et le réparer.
+    L'usage de  "<em>import</em>", "<em>exec</em>" et "<em>eval</em>" est interdit pour cette mission.
+</p>
+
+<p>
+    Une chaîne de caractères vous est donnée ; elle contient une liste d'entiers, ou de sous-listes.
+    Les entiers peuvent être précédés des signes plus ou moins.
+    Si la chaîne (string) donnée ne contient aucun <em>array</em>, alors lever <strong>ValueError</strong>.
+    Pour une chaîne (string) incorrectement formatée, lever  <strong>ValueError</strong>.
+    Le éléments du <em>array</em> sont séparés par des virgules.
+</p>
+
+<p>
+    <strong>Input: </strong> Une chaîne de caractères (string).
+</p>
+
+<p>
+    <strong>Output: </strong> La liste de sous-listes ou d'entiers.
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Exemple:</strong>
+    </p>
+    <pre class="brush: python">
+parse_array("[1, 2, 3]") == [1, 2, 3]
+parse_array("[[1], 2, 3]") == [[1], 2, 3]
+parse_array("[-3, [-2, 0], 10]") == [-3, [-2, 0], 10]
+</pre>
+</div>
+
+<p class="for_info_only">
+    <strong>Application: </strong>
+    Cette mission a été pensée pour évaluer vos capacités à trouver des bugs.
+    Le code parser lui-même peut être modifié et amélioré pour fonctionner comme une partie d'un système de parsing plus complexe.
+</p>
+
+<p>
+    <strong>Préconditions: </strong><br>
+    profondeur &lt; 5<br>
+    &forall; x ∈ data : -1000 < x < 1000<br>
+    </p>
